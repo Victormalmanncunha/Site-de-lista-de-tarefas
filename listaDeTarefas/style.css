@@ -1,0 +1,151 @@
+*{
+    padding: 0rem;
+    margin: 0rem;
+    border: 0rem;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(136, 174, 224);
+}
+h1{
+    font-size: 4rem; 
+    padding: 2rem;
+}
+h2{
+    margin: 0rem;
+    font-size: 2.5rem;
+}
+div{
+    text-align: center;
+}
+#criacaoTarefa, #edicaoTarefa{
+    display: none;
+    padding: 0.3rem;
+    margin: 1rem;   
+}
+#criacaoTarefa p, #edicaoTarefa p{
+    font-size: 1.6rem;
+    margin: 1rem
+}
+#criacaoTarefa input, #edicaoTarefa input{
+    margin: 1rem;
+}
+#criacaoTarefa{
+    /* border: 0.2rem black solid; */
+    box-shadow: 0.5rem 0.5rem rgb(92, 127, 160);
+    background-color: rgb(134, 255, 134);
+    border-radius: 1rem;
+}
+#edicaoTarefa{
+    /* border: 0.2rem black solid; */
+    box-shadow: 0.7rem 0.7rem rgb(92, 127, 160);
+    background-color: rgb(80, 120, 253);
+    border-radius: 1rem;
+}
+.inputs{
+    display: inline-block;
+}
+#divTarefas{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+@media screen and (max-width: 1000px){
+    #divTarefas{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 700px){
+    #divTarefas{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+#divTarefas div{
+    display: inline-block;
+    margin: 1rem;
+    overflow: hidden;
+    word-wrap: break-word;
+    max-height: 20rem;
+}
+#descricaoTarefa{
+    overflow-y: auto;
+    max-height: 8rem;
+    font-size: 1.6rem;
+}
+#divTarefas h3{
+    font-size: 2rem;
+}
+.textoData{
+    font-size: 1.8rem;
+}
+.baixaPrioridade{
+    background-color: rgb(134, 255, 134);
+    padding: 1rem;
+    border-radius: 1rem;
+    /* border: 0.1rem black solid; */
+    box-shadow: 0.5rem 0.5rem rgb(92, 127, 160);
+}
+.mediaPrioridade{
+    background-color: rgb(255, 255, 152);
+    padding: 1rem;
+    border-radius: 1rem;
+    /* border: 0.1rem black solid; */
+    box-shadow: 0.5rem 0.5rem rgb(92, 127, 160);
+}
+.altaPrioridade{
+    background-color: rgb(255, 148, 148);
+    padding: 1rem;
+    border-radius: 1rem;
+    /* border: 0.1rem black solid; */
+    box-shadow: 0.5rem 0.5rem rgb(92, 127, 160);
+
+}
+#diasRepeticaoCriacao, #diasRepeticaoEdt{
+    display: none;
+}
+.botoes button{
+    border: none;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 0.2rem;
+    border-radius: 1rem;
+    box-shadow: 0.2rem 0.2rem rgb(92, 127, 160);
+}
+.botoes button:hover{
+    transform: scale(0.95);
+}
+#filtragem{
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    box-shadow: 0.2rem 0.2rem rgb(92, 127, 160);
+}
+.inputs input, .inputs select{
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    box-shadow: 0.2rem 0.2rem rgb(92, 127, 160);
+}
+#historico{
+    display: inline-block;
+}
+#historico h2{
+    color: black;
+}
+a{
+    color: black;
+}
+a:visited{
+    color: black;
+}
+#historico:hover{
+    transform: scale(0.95);
+}
+#tarefas:hover{
+    outline: white 1rem;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@400;700&family=Yuji+Boku&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h1>Lista de tarefas</h1>
+        <div class="botoes">
+            <button id="btnCriar" onclick="mostrarCriarTarefa()">Criar tarefa</button>
+        </div>
+        
+        <form onsubmit="return false" id="criacaoTarefa">
+            <h2>Criar tarefa</h2>
+            <br>
+            <div class="inputs">
+                <p>Nome da tarefa</p>
+                <input type="text" name="nomeCriacaoTarefa" id="nomeCriacaoTarefa" required>
+            </div>
+            <div class="inputs">
+                <p>Descrição da tarefa</p>
+                <input type="text" name="descricaoCriacaoTarefa" id="descricaoCriacaoTarefa">
+            </div>
+            <div class="inputs">
+                <p>Dia</p>
+                <input type="date" name="dataCriacaoTarefa" id="dataCriacaoTarefa">
+            </div>
+            <div class="inputs">
+                <p style="margin-bottom: 1.9rem;">Prioridade</p>
+                <select name="prioridadeCriacao" id="prioridadeCriacao">
+                    <option style="background-color: green;" value="baixa">Baixa</option>
+                    <option style="background-color: yellow;" value="media">Media</option>
+                    <option style="background-color: red;" value="alta">Alta</option>
+                </select>
+            </div>
+            <div style="display: inline-block;">
+                <p style="margin-bottom: 1.3rem;">Repetir?</p>
+                <input type="checkbox" name="repetirCriacaoCheck" id="repetirCriacaoCheck">
+            </div>
+            <br>
+            <div class="inputs" id="diasRepeticaoCriacao">
+                <p>Repetir de quantos em quantos dias?</p>
+                <input type="number" name="repetirDiasCriacao" id="repetirDiasCriacao" min="1" max="1095" value="1">
+            </div>
+            <br><br>
+            <div class="botoes">
+                <button onclick="criarTarefa()">Criar</button>
+                <button onclick="cancelarCriarTarefa()">Cancelar</button>
+            </div>
+        </form>
+        
+
+
+
+
+        <form onsubmit="return false" id="edicaoTarefa">
+            <h2>Editar tarefa </h2>
+            <br>
+            <div class="inputs">
+                <p>Nome da tarefa</p>
+                <input type="text" name="nomeTarefaEdt" id="nomeTarefaEdt" required>
+            </div>
+            <div class="inputs">
+                <p>Descrição da tarefa</p>
+                <input type="text" name="descricaoTarefaEdt" id="descricaoTarefaEdt">
+            </div>
+            <div class="inputs">
+                <p>Dia</p>
+                <input type="date" name="diaDeEntregaEdt" id="diaDeEntregaEdt">
+            </div>
+            <div class="inputs">
+                <p style="margin-bottom: 1.9rem;">Prioridade</p>
+                <select name="prioridadeEdt" id="prioridadeEdt">
+                    <option style="background-color: green;" value="baixa">Baixa</option>
+                    <option style="background-color: yellow;" value="media">Media</option>
+                    <option style="background-color: red;" value="alta">Alta</option>
+                </select>
+            </div>
+            <div style="display: inline-block;">
+                <p style="margin-bottom: 1.9rem;">Repetir?</p>
+                <input type="checkbox" name="repetirCheckEdt" id="repetirCheckEdt">
+            </div>
+            <br>
+            <div class="inputs" id="diasRepeticaoEdt">
+                <p>Repetir de quantos em quantos dias?</p>
+                <input type="number" name="repetirDiasEdt" id="repetirDiasEdt" min="1" max="1095" value="1">
+            </div>
+            <br><br>
+            <div class="botoes" id="idEdicaoBoto">
+                <button onclick="editarTarefa()">Editar</button>
+                <button onclick="cancelarEdicaoTarefa()">Cancelar</button>
+            </div>
+        </form>
+
+
+        <br><br>
+
+
+        <div>
+            <select name="filtragem" id="filtragem">
+                <option value="pertoDeAcabar">Próximo de acabar</option>
+                <option value="longeDeAcabar">Longe de acabar</option>
+                <option value="prioridadeAlta">Maior Prioridade</option>
+                <option value="prioridadeBaixa">Menor Prioridade</option>
+            </select>
+            <br><br>
+            <div class="botoes">
+                <button onclick="filtrar()">Filtrar</button>
+            </div>
+        </div>
+        <br><br>
+        <div id="divTarefas">
+            
+        </div>
+        <div id="historico">
+            <h2 style="text-decoration: underline;"><a href="historico.html">Histórico</a></h2>
+        </div>
+    </div>
+</body>
+<script src="index.js"></script>
+</html>
