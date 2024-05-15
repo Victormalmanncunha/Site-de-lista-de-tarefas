@@ -1,2 +1,3 @@
 # Site-de-lista-de-tarefas
-Um site que permite escrever as tarefas que você tem.
+Um site que eu criei que permite você escrever suas tarefas pendentes, possui multíplas funções, na criação de tarefas, você pode colocar nome, descrição, prioridade da tarefa, data a ser entregue, repetir tarefa. para facilitar o uso, coloquei um sistema de filtragem, para você ver quais as tarefas com maior prioridade, ou as que tem prazo mais curto para serem entregues. o site possui também um hístorico para você ver as tarefas que você já concluiu no passado. 
+Para fazer esse site usei o localStorage do javaScript, então se o cache do navegador for limpado, isso irá fazer as tarefas sumirem.
