@@ -194,7 +194,9 @@ function mostrarEdicaoTarefa(id, idTarefa){
     divEdicaoTarefa.style = "display: inline-block;"
     nomeEdicaoTarefa.value = tarefas[id].nomeTarefa
     descricaoEdicaoTarefa.value = tarefas[id].descricaoTarefa
-    dataEdicaoTarefa.value = tarefas[id].dataTarefa
+    dataFormatada = new Date(tarefas[id].dataTarefa)
+    dataFormatada = dataFormatada.toISOString().split('T')[0]
+    dataEdicaoTarefa.value = dataFormatada
     prioridadeEdicaoTarefa.value = prioridade 
     repetirEdicaoCheck.checked = tarefas[id].repetir
     repetirDiasEdicao.value = tarefas[id].repetirDias
@@ -215,21 +217,21 @@ function cancelarEdicaoTarefa(){
 function editarTarefa(idTarefa){
     cancelarEdicaoTarefa()
     if(nomeEdicaoTarefa.value && (repetirEdicaoCheck.checked && dataEdicaoTarefa.value && repetirDiasEdicao.value<=1095) || nomeEdicaoTarefa.value && !repetirEdicaoCheck.checked){
-    let prioridade
-    if(prioridadeEdicaoTarefa.value === "baixa") prioridade = 1
-    if(prioridadeEdicaoTarefa.value === "media") prioridade = 2
-    if(prioridadeEdicaoTarefa.value === "alta") prioridade = 3
-    let tarefaEditada = {
-        nomeTarefa: nomeEdicaoTarefa.value,
-        descricaoTarefa: descricaoEdicaoTarefa.value,
-        dataTarefa: dataEdicaoTarefa.value,
-        prioridadeTarefa: prioridade,
-        repetir: repetirEdicaoCheck.checked,
-        repetirDias: Number(repetirDiasEdicao.value),
-        idTarefa: idTarefa
-    }
-    localStorage.setItem(idTarefa, JSON.stringify(tarefaEditada))
-    pegarTarefas()
+        let prioridade
+        if(prioridadeEdicaoTarefa.value === "baixa") prioridade = 1
+        if(prioridadeEdicaoTarefa.value === "media") prioridade = 2
+        if(prioridadeEdicaoTarefa.value === "alta") prioridade = 3
+        let tarefaEditada = {
+            nomeTarefa: nomeEdicaoTarefa.value,
+            descricaoTarefa: descricaoEdicaoTarefa.value,
+            dataTarefa: dataEdicaoTarefa.value,
+            prioridadeTarefa: prioridade,
+            repetir: repetirEdicaoCheck.checked,
+            repetirDias: Number(repetirDiasEdicao.value),
+            idTarefa: idTarefa
+        }
+        localStorage.setItem(idTarefa, JSON.stringify(tarefaEditada))
+        pegarTarefas()
 }
 }
 
